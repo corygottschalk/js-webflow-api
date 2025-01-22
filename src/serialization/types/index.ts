@@ -99,7 +99,6 @@ export * from "./Form";
 export * from "./FormList";
 export * from "./FormSubmission";
 export * from "./FormSubmissionList";
-export * from "./UserDataData";
 export * from "./UserData";
 export * from "./UserStatus";
 export * from "./UserAccessGroupsItemType";

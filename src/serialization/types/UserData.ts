@@ -5,15 +5,25 @@
 import * as serializers from "../index";
 import * as Webflow from "../../api/index";
 import * as core from "../../core";
-import { UserDataData } from "./UserDataData";
 
 export const UserData: core.serialization.ObjectSchema<serializers.UserData.Raw, Webflow.UserData> =
     core.serialization.object({
-        data: UserDataData.optional(),
+        name: core.serialization.string().optional(),
+        email: core.serialization.string().optional(),
+        acceptPrivacy: core.serialization.property("accept-privacy", core.serialization.boolean().optional()),
+        acceptCommunications: core.serialization.property(
+            "accept-communications",
+            core.serialization.boolean().optional()
+        ),
+        additionalProperties: core.serialization.string().optional(),
     });
 
 export declare namespace UserData {
     interface Raw {
-        data?: UserDataData.Raw | null;
+        name?: string | null;
+        email?: string | null;
+        "accept-privacy"?: boolean | null;
+        "accept-communications"?: boolean | null;
+        additionalProperties?: string | null;
     }
 }
